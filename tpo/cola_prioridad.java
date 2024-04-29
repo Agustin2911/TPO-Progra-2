@@ -1,8 +1,8 @@
 package tpo;
 
 class valor{
-	int contenido;
-	int prioridad;
+	Integer contenido;
+	Integer prioridad;
 	
 	public valor(Integer x , Integer y){
 		this.contenido=x;
@@ -22,22 +22,26 @@ public class cola_prioridad implements cola_prioridad_tda{
 		indice=0;
 	};
 	public Integer primer(){
-		return lista[indice-1].contenido;
+		return lista[0].contenido;
 	};
 	public Integer prioridad() {
-		return lista[indice-1].prioridad;
+		return lista[0].prioridad;
 	};
-	public void agregar(Integer x,Integer y) {
-		for(Integer i=indice;i!=-1;i--) {
-			if (lista[i-1].prioridad>y) {
-				lista[i]=lista[i-1];
-			}
-			else {
-				lista[i]=new valor(x,y);
-			}
+	
+	public void agregar(Integer x, Integer y) {
+		int j= indice;
+		for(;j>0 && lista[j-1].prioridad>=y;j--) {
+			lista[j]=lista[j-1];
 		}
+		lista[j]=new valor(x,y);
 		indice++;
-	};
+	}
+	public void mostrar() {
+		for(Integer i =0;i!=indice;i++) {
+			System.out.println("este es el valor "+ lista[i].contenido+ " esta es la prioridad "+ lista[i].prioridad);
+			
+		}
+	}
 	public Boolean vacia() {
 		return indice==0;
 	};
