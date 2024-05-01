@@ -22,15 +22,15 @@ public class cola_prioridad implements cola_prioridad_tda{
 		indice=0;
 	};
 	public Integer primer(){
-		return lista[0].contenido;
+		return lista[indice-1].contenido;
 	};
 	public Integer prioridad() {
-		return lista[0].prioridad;
+		return lista[indice-1].prioridad;
 	};
 	
 	public void agregar(Integer x, Integer y) {
 		int j= indice;
-		for(;j>0 && lista[j-1].prioridad>=y;j--) {
+		for(;j>0 && lista[j-1].prioridad<=y;j--) {
 			lista[j]=lista[j-1];
 		}
 		lista[j]=new valor(x,y);
@@ -46,6 +46,6 @@ public class cola_prioridad implements cola_prioridad_tda{
 		return indice==0;
 	};
 	public void restar_uno() {
-		indice-=1;
+		indice--;
 	};
 }
