@@ -23,7 +23,7 @@ public class cola_prioridad implements cola_prioridad_tda{
 	
 	public void agregar(clientes x) {
 		int j= indice;
-		for(;j>0 && lista[j-1].tipo_cliente>=x.tipo_cliente;j--) {
+		for(;j>0 && lista[j-1].tipo_cliente<x.tipo_cliente;j--) {
 			lista[j]=lista[j-1];
 		}
 		lista[j]=x;
