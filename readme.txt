@@ -66,7 +66,7 @@ Cola con Prioridad TDA:
 	
 	public void agregar(clientes x) {
 		int j= indice;                      asignacion de valor = O(1)
-		for(;j>0 && lista[j-1].tipo_cliente<=x.tipo_cliente;j--) {   bucle (desplaza todos los elementos) = O(n)
+		for(;j>0 && lista[j-1].tipo_cliente<x.tipo_cliente;j--) {   bucle (desplaza todos los elementos) = O(n)
 			lista[j]=lista[j-1];        asignacion de valor = O(1)
 		}
 		lista[j]=x;                         asignacion de valor = O(1)
@@ -74,7 +74,7 @@ Cola con Prioridad TDA:
 	}                                           O(1) + (O(n) * O(1)) + O(1) + O(1) = O(n)
 
 	public void mostrar() {
-		for(Integer i =0;i!=indice;i++) {   bucle (recorre todos los elementos) = O(n)
+		for(Integer i =indice-1;i!=-1;i--) {   bucle (recorre todos los elementos) = O(n)
 			System.out.println("este es el valor "+ lista[i].id_cliente+ " esta es la prioridad "+ lista[i].tipo_cliente);
                                                                                        imprimir elemento = O(1)
 			
