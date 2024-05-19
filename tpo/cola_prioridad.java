@@ -30,7 +30,7 @@ public class cola_prioridad implements cola_prioridad_tda{
 		indice++;
 	}
 	public void mostrar() {
-		for(Integer i =0;i!=indice;i++) {
+		for(Integer i =indice-1;i!=-1;i--) {
 			System.out.println("este es el valor "+ lista[i].id_cliente+ " esta es la prioridad "+ lista[i].tipo_cliente);
 			
 		}
