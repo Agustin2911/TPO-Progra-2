@@ -93,3 +93,59 @@ Cola con Prioridad TDA:
 		return lista[indice-1];             acceder a elemento de lista = O(1)
 	}
 }
+
+main:
+public static void  main(String[]agrs) {
+	ConjuntoInicial.inicializar(); 			llamada a metodo= O(1)
+	ConjuntoEmpresa.inicializar();			llamada a metodo = O(1)
+	ConjuntoParticularCliente.inicializar();	llamada a metodo = O(1)
+	ConjuntoParticularNoCliente.inicializar();	llamada a metodo = O(1)
+	cola_prioridad cola=new cola_prioridad();	asignacion de objeto = O(1)
+	cola.inicializar();				llamada a metodo = O(1)
+	ConjuntoInicial.agregar(1,2);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(2,2);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(3,1);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(4,3);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(5,1);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(6,2);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(7,3);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(8,1);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(9,2);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(10,1);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(11,2);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(12,3);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(13,3);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(14,3);			llamada a metodo = O(1)
+	ConjuntoInicial.agregar(15,1);			llamada a metodo = O(1)
+	while(!ConjuntoInicial.conjutno_vacio()) {	bucle = o(n)
+		cola.agregar(ConjuntoInicial.elegir());		llamada a metodo =o(1)
+		ConjuntoInicial.sacar(ConjuntoInicial.elegir());	llamada a metodo=o(1)
+	}	
+	cola.mostrar();					llamada a metodo = o(n)
+	atender_clientes(cola);				llamda a metodo atender=o(n)
+	ConjuntoEmpresa.ver();				llamda a metodo=o(n)
+	ConjuntoParticularCliente.ver();		llamda a metodo=o(n)
+	ConjuntoParticularNoCliente.ver();		llamda a metodo=o(n)
+}							o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(1)+o(n)+0(1)+o(1)+o(n)+o(n)+o(n)+o(n)+o(n)=o(n)
+
+	
+private static void ingresar_al_conjunto(clientes x){
+	if(x.tipo_cliente==1) {					operacion aritmetica =o(1)
+		ConjuntoEmpresa.agregar(x.id_cliente,x.tipo_cliente);	llamada a metodo=o(1)
+	}
+	else if (x.tipo_cliente==2) {				operacion aritmetica =o(1)
+		ConjuntoParticularCliente.agregar(x.id_cliente,x.tipo_cliente);llamada a metodo=o(1)
+	}
+	else if (x.tipo_cliente==3) {				operacion aritmetica =o(1)
+		ConjuntoParticularNoCliente.agregar(x.id_cliente,x.tipo_cliente);llamada a metodo=o(1)
+	}
+								o(1)+o(1)+o(1)+o(1)+o(1)+o(1)=o(1)
+}
+	
+private static void atender_clientes(cola_prioridad x){
+	while(!x.vacia()) {					bucle = o(n)
+		ingresar_al_conjunto(x.devolver_cliente());	llamada a metodo=o(n)
+		x.restar_uno();					llamada a metodo=o(1)
+	}							o(n)+o(n)+o(1)=o(n)
+}
+	
